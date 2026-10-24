@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* ---- PATCH design tokens (see product/design.md) ---- */
+@theme {
+  /* ---- SAGE & CLAY: one cohesive, warm, earthy palette ----
+     Dominant = muted sage/olive green (grounding, map-friendly). The dark shell
+     (nav, map vignette) is a deep forest-olive that recedes beautifully over the
+     map. ONE warm spark = clay-rose for primary actions. Honey for positive
+     states. Everything is earthy and in-family — no clash, no neon. */
+  --color-canvas: #f4efe3; /* warm linen cream */
+  --color-surface: #fcf8ef; /* soft ivory card */
+  --color-surface-2: #ece6d6; /* layered surface */
+  --color-ink: #232a20; /* deep olive-charcoal text */
+  --color-ink-soft: #66705b; /* muted sage-taupe secondary */
+  --color-line: #ddd4bf; /* warm sand border (a touch stronger for card definition) */
+  /* Brand/structure = sage/olive family (dominant). */
+  --color-brand: #5c6f4b; /* muted sage-green (links, structure) */
+  --color-brand-deep: #2f3b2a; /* deep forest-olive (nav, map shell) */
+  --color-brand-dusk: #4a5b3c; /* moss (gradient stop) */
+  --color-brand-weak: #e7ecda; /* soft sage tint (active nav, positive surfaces) */
+  /* Primary action = BERRY ROSE — a true pink-red (zero orange), pops on sage. */
+  --color-accent: #b14a6b;
+  --color-accent-weak: #f3dde4; /* soft berry tint */
+  /* Positive/success (available, matched, resolved) = sage (in-family, calm). */
+  --color-leaf: #5c6f4b;
+  --color-leaf-weak: #e7ecda;
+  /* "amber" legacy name now = warm honey (used sparingly, earthy). */
+  --color-amber: #b08433;
+  --color-amber-weak: #f1e6cc;
+  --color-danger: #b23a26;
+  --color-danger-weak: #f4ddd4;
+  /* Cream text/icons on the dark sage shell (nav, overlays). */
+  --color-cream: #f4efe3;
+  --color-cream-soft: #cdd6c0;
+
+  --radius-control: 10px;
+  --radius-card: 16px;
+
+  /* Richer, warmer shadows so cards lift off the cream canvas and "pop". */
+  --shadow-soft: 0 1px 2px rgba(47, 59, 42, 0.06), 0 4px 10px -4px rgba(47, 59, 42, 0.12), 0 14px 32px -20px rgba(47, 59, 42, 0.34);
+  --shadow-lift: 0 2px 6px rgba(47, 59, 42, 0.1), 0 10px 22px -8px rgba(47, 59, 42, 0.2), 0 28px 54px -26px rgba(47, 59, 42, 0.42);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, "Times New Roman", serif;
+
+  /* Legacy supporting tokens — all mapped into the sage/clay family so no stray
+     color can leak through older usages. */
+  --color-lime: #6f8450;
+  --color-lime-weak: #e7ecda;
+  --color-coral: #b14a6b;
+  --color-coral-weak: #f3dde4;
+  --color-butter: #b08433;
+  --color-butter-weak: #f1e6cc;
+  --color-sky: #5c6f4b;
+  --color-sky-weak: #e7ecda;
+}
+
+/* Expressive editorial display utility */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+
+html,
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+/* Visible, consistent focus ring for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Respect reduced-motion: disable non-essential transitions/animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Leaflet: let our branded divIcons render without default box styling */
+.patch-marker {
+  background: transparent;
+  border: 0;
+}
+.leaflet-container {
+  font: inherit;
+}
+
+/* Soft earthy tile treatment for the hero map — desaturates the busy OSM
+   colors and nudges them toward a calm sage/sand tone so the map reads as part
+   of the palette while staying clearly legible. */
+.patch-tiles-warm {
+  filter: saturate(0.6) sepia(0.18) hue-rotate(28deg) brightness(1.03) contrast(0.94);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes patchFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes patchStitch {
+  to { stroke-dashoffset: -220; }
+}
+@keyframes patchConfetti {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(105vh) rotate(540deg); opacity: 0.9; }
+}
+@keyframes patchCelebrate {
+  0% { transform: scale(0.85); opacity: 0; }
+  55% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.patch-confetti { animation: patchConfetti 2.8s cubic-bezier(0.3, 0.6, 0.4, 1) forwards; }
+.patch-celebrate { animation: patchCelebrate 360ms ease both; }
+
+.patch-float { animation: patchFloat 4.5s ease-in-out infinite; }
+.patch-float-slow { animation: patchFloat 7s ease-in-out infinite; }
+.patch-stitch { animation: patchStitch 9s linear infinite; }
+
+/* Entrance helpers for page sections */
+.patch-rise { animation: fadeIn 420ms ease both; }
+.patch-rise-2 { animation: fadeIn 420ms ease 80ms both; }
+.patch-rise-3 { animation: fadeIn 420ms ease 160ms both; }
+
+/* Utility: subtle skeleton shimmer */
+@keyframes patch-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+.patch-skeleton {
+  animation: patch-pulse 1.4s ease-in-out infinite;
+  background: linear-gradient(90deg, #efece4, #f6f4ee, #efece4);
+}
+
+/* Screen-reader-only helper */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

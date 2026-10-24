@@ -1,0 +1,23 @@
+{
+  "name": "patch-infra",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AWS CDK infrastructure for PATCH (DynamoDB, Lambda, API Gateway, Cognito, S3, CloudWatch, SNS).",
+  "bin": { "patch-infra": "bin/app.js" },
+  "scripts": {
+    "build": "tsc",
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "aws-cdk": "^2.165.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.165.0",
+    "constructs": "^10.4.2"
+  }
+}
