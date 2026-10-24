@@ -19,6 +19,8 @@ Marketplaces make you search for *products*. Lending apps make you browse *inven
 
 You describe a problem in plain language. PATCH interprets the underlying need, retrieves **real** resources from its database, rules out infeasible options with deterministic logic, ranks the feasible ones transparently, shows them **on a map**, and helps you connect. If nothing's listed, you can **ask the community** and a neighbor can step up — then you coordinate in **messages**, resolve it, and earn **PATCH Points** for helping.
 
+<img width="1298" height="958" alt="Screenshot 2026-10-23 at 11 14 31 PM" src="https://github.com/user-attachments/assets/f47209c6-05ca-47bc-bf09-1d896745c347" />
+
 ## What makes it different
 
 - **Problem-first, not item-first.** The signature "I need a fix" flow interprets intent, not keywords ("I'm bleeding, need a Band-Aid" → first-aid supplies, not an umbrella).
@@ -48,6 +50,9 @@ You describe a problem in plain language. PATCH interprets the underlying need, 
 | **PATCH Points** | Verified-contribution ledger, badges, community milestones, a `/points` page, and a landing-page leaderboard. |
 | **Profiles** | Public `/u/[id]` pages with avatar, points, badges, and shared resources — linked from names throughout. |
 | **Request lifecycle** | Explicit states + server-enforced transitions for both resource requests and community requests. |
+
+<img width="1292" height="947" alt="Screenshot 2026-10-23 at 11 15 04 PM" src="https://github.com/user-attachments/assets/ed4ea5d1-291d-49a4-897e-3eb599ef8d04" />
+
 
 ---
 
