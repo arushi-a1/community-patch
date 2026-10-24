@@ -3,7 +3,7 @@
 > **PATCH** — *Your community, one solution away.*
 > A hyperlocal, AI-powered, problem-first community platform. Hackathon theme: *Within Reach — solve what is close to you.*
 
-This document defines the product requirements for the hackathon MVP. It records personas, journeys, functional and non-functional requirements, acceptance criteria, security requirements, MVP scope, and explicitly deferred features. Where a decision was ambiguous, a documented assumption is recorded inline as **[ASSUMPTION]**.
+This document defines the product requirements for PATCH. It records personas, journeys, functional and non-functional requirements, acceptance criteria, security requirements, scope, and explicitly deferred features. Where a decision was ambiguous, a documented assumption is recorded inline as **[ASSUMPTION]**.
 
 ---
 
@@ -148,16 +148,16 @@ Payments, deposits, reputation systems, public social feeds, DM infrastructure, 
 
 ---
 
-## Post-MVP scope delivered (beyond this original spec)
+## Delivered feature scope
 
-This document captured the original borrowing MVP. The shipped product extends well past it into a full community platform. Delivered and verified:
+Beyond the core borrowing journey, PATCH delivers a full community platform:
 
 - **Interactive community map** (Leaflet/OSM, UW-Seattle, privacy-jittered pins) as the home-page hero.
-- **Open community requests** — post "I need X" with no matching listing; nearby neighbors are notified and can **offer help**; requester accepts (concurrency-safe); resolve.
-- **Persisted messaging** — conversations open the moment you offer/request; participants-only; polling; realtime-ready.
+- **Open community requests** — post "I need X" with no matching listing; nearby neighbors are notified and can **offer help**; the requester accepts (concurrency-safe) and resolves.
+- **Persisted messaging** — conversations open the moment you offer/request; participants-only; realtime-ready model.
 - **In-app notifications** — nearby-request, new-offer, accepted, resolved, points.
 - **PATCH Points** — verified-only, idempotent, server-validated ledger; badges; community milestones; `/points` page; landing-page leaderboard; public profiles (`/u/[id]`).
-- **Resource editing**, clickable member profiles everywhere, a sage & clay visual identity, and a resolution celebration.
-- **AI intent layer** — concept/synonym understanding (e.g. first-aid) + safety guard, raising the eval set to 13/13.
+- **Resource editing**, clickable member profiles throughout, a cohesive visual identity, and a resolution celebration.
+- **Natural-language intent understanding** — concept/synonym layer (e.g. first-aid) + a safety guard.
 
-See `implementation-plan.md` (M12–M17) for the milestone detail and `README.md` for the current feature list and honest limitations (notably: Bedrock not connected in this environment; local JSON persistence with a designed DynamoDB adapter).
+See `README.md` for the full feature list, setup, and honest limitations.

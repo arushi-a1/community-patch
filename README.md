@@ -201,7 +201,7 @@ npm run lint
 npm run build
 ```
 
-Coverage highlights: input/schema validation, matching scores + hard constraints, compatibility & deadline feasibility, state transitions, authorization, alternative grounding, safety guard, prompt-injection handling, concurrency (double-booking **and** double-offer-accept), messaging authz + unread tracking, and **points idempotency** (a repeat resolution never double-awards). Live smoke scripts under `scripts/` exercise the API journeys (`smoke.mjs`, `smoke-community.mjs`, `smoke-messaging.mjs`, `smoke-offer-chat.mjs`).
+Coverage highlights: input/schema validation, matching scores + hard constraints, compatibility & deadline feasibility, state transitions, authorization, alternative grounding, safety guard, prompt-injection handling, concurrency (double-booking **and** double-offer-accept), messaging authz + unread tracking, and **points idempotency** (a repeat resolution never double-awards).
 
 ---
 
@@ -243,9 +243,7 @@ Finding your Bedrock model id: in the Bedrock console → **Model access** (enab
 
 ---
 
-## Demo
-
-See [`product/demo-script.md`](product/demo-script.md). Quick version:
+## Try it
 
 1. `npm run seed && npm run dev` → the home page opens on the **UW map** with the AI composer floating over it.
 2. Submit the signature problem (USB-C ↔ HDMI, 15 min) → compatible available adapter ranked first; the reserved one and the HDMI-only cable are correctly ruled out; a hub alternative is offered.
@@ -263,5 +261,3 @@ All demo data is fictional and clearly labeled as the `campus-demo` community. R
 - [`product/architecture.md`](product/architecture.md) — system design, data model, data flow, failure modes, deployment.
 - [`product/design.md`](product/design.md) — visual system, UX, accessibility.
 - [`product/security.md`](product/security.md) — authorization, privacy, prompt-injection resistance, threat model.
-- [`product/implementation-plan.md`](product/implementation-plan.md) — milestones and status.
-- [`product/demo-script.md`](product/demo-script.md) — the judge walkthrough.

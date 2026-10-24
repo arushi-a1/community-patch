@@ -81,9 +81,9 @@ The product must not claim what it cannot verify:
 
 ---
 
-## Post-MVP security surfaces
+## Community-platform security surfaces
 
-The new features extend the same model — server-side authorization, minimal disclosure, idempotency, and concurrency safety.
+The community features (requests, offers, messaging, points, profiles, map) follow the same model — server-side authorization, minimal disclosure, idempotency, and concurrency safety.
 
 ### Community requests & offers
 - Offering is denied for the requester on their own request and for non-community members. Only the **requester** accepts/declines offers and resolves/cancels; a helper may withdraw only their own pending offer; resolve is allowed for the requester or the accepted helper.

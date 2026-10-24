@@ -86,9 +86,9 @@ Semantic landmarks; labelled form controls; visible focus ring (`--focus`); AA c
 
 ---
 
-## Post-MVP visual identity (current)
+## Visual identity (current): Sage & Clay
 
-The palette evolved from the original green/accent system to a cohesive, warm **Sage & Clay** identity (chosen after direct design iteration). The guiding principle: **one deep, calm, dominant color for structure + one restrained warm spark for actions** — the arrangement that reads premium rather than corporate.
+A cohesive, warm **Sage & Clay** palette. The guiding principle: **one deep, calm, dominant color for structure + one restrained warm spark for actions** — the arrangement that reads premium rather than corporate.
 
 ### Current tokens (source of truth: `src/app/globals.css`)
 | Token | Value | Role |
@@ -99,10 +99,10 @@ The palette evolved from the original green/accent system to a cohesive, warm **
 | `--color-brand` | `#5c6f4b` | muted sage-green (structure/links/positive) |
 | `--color-brand-deep` | `#2f3b2a` | deep forest-olive (nav, map vignette) |
 | `--color-brand-weak` | `#e7ecda` | soft sage tint (active nav, positive surfaces) |
-| `--color-accent` | `#c06a4e`→ **`#b14a6b`** | **berry rose** — the single warm spark, primary actions only |
+| `--color-accent` | `#b14a6b` | **berry rose** — the single warm spark, primary actions only |
 | `--color-amber` | honey | small positive/time accents, in-family |
 
-Key lesson captured: a warm accent next to green reads "green + orange" unless the accent is a true pink-red (berry), not a terracotta/clay. Berry rose is the accent.
+The accent is a true pink-red (berry), chosen so it reads as a distinct, warm highlight against the sage greens rather than blending into an earth-tone.
 
 ### Typography
 Editorial **Fraunces** (display headings, via `next/font`) paired with **Inter** (sans body). `.font-display` utility applies optical sizing + tight tracking.

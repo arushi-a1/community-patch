@@ -1,6 +1,6 @@
 /**
  * In-memory token-bucket rate limiter (SR §5). Sufficient for a single-node
- * local/dev deployment and the hackathon demo. In AWS mode, API Gateway
+ * local/dev deployment. In AWS mode, API Gateway
  * throttling + per-identity usage plans provide the production equivalent.
  */
 interface Bucket {

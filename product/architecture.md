@@ -146,9 +146,9 @@ Table `patch` with `PK`/`SK` and GSIs. Local adapter mirrors the same access pat
 
 ---
 
-## Post-MVP additions (community platform)
+## Community platform: entities, services & endpoints
 
-The platform grew beyond the borrowing MVP. The same local-first / AWS-ready, interface-driven architecture holds; these are additive entities, services, and endpoints.
+The full platform (open requests, messaging, points, profiles, map) uses the same local-first / AWS-ready, interface-driven architecture described above.
 
 ### New domain entities
 - **CommunityRequest** — an open "I need X" post not tied to a listed resource. States `OPEN → MATCHED → RESOLVED` (+ `CANCELLED`, `EXPIRED`). Carries a coarse `location` for proximity + map.
