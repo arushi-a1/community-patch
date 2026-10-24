@@ -167,11 +167,16 @@ Run `npm run eval` for a measured report (13 realistic cases: exact/indirect/com
 - Balances, badges, and milestones are **derived from the ledger** — there is no stored balance a user could tamper with.
 - **Points are not a trust/safety signal.** A high balance never implies someone is verified or safe, and the UI says so.
 
+<img width="1293" height="932" alt="Screenshot 2026-10-23 at 11 14 41 PM" src="https://github.com/user-attachments/assets/2ddac077-15f9-4978-99a0-cfa3a658e597" />
+
+
 ---
 
 ## Messaging
 
 Persisted conversations tied to a resource request or a community request, between exactly two participants. A conversation **opens the moment you offer help or request an item** (seeded with your note as the first message) and appears in both people's Messages tab — chat before any acceptance. Polling-based; the append-only message model is **realtime-ready** so a websocket/SSE layer can be added later without a rewrite. Authorization is enforced (participants only).
+
+<img width="1243" height="949" alt="Screenshot 2026-10-23 at 11 41 11 PM" src="https://github.com/user-attachments/assets/9d2db979-26f9-4233-9e5c-03a5d224d365" />
 
 ---
 
